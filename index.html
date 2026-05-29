@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bui Bich Phuong | Marketing Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#FDF8F0;
+  --peach:#F5E6D3;
+  --coral:#E8916A;
+  --coral-dark:#C96A3E;
+  --mint:#C8E6C9;
+  --lavender:#E8E0F5;
+  --lilac:#B8A9E8;
+  --yellow:#F9E4A0;
+  --blue-soft:#D0E8F5;
+  --text-dark:#2A1F1A;
+  --text-mid:#5C4A3A;
+  --text-light:#8C7A6A;
+  --border:#E8D8C8;
+  --bg-card:#FFFFFF;
+  --bg-overlay:rgba(253,248,240,0.9);
+}
+
+[data-theme="dark"] {
+  --cream:#1A120E;
+  --peach:#2A1F1A;
+  --coral:#E8916A;
+  --coral-dark:#FFB394;
+  --mint:#2E4A35;
+  --lavender:#3B2E54;
+  --lilac:#B8A9E8;
+  --yellow:#5E5224;
+  --blue-soft:#274154;
+  --text-dark:#FDF8F0;
+  --text-mid:#D3C4B5;
+  --text-light:#A89B8D;
+  --border:#3A2A20;
+  --bg-card:#221814;
+  --bg-overlay:rgba(26,18,14,0.9);
+}
+
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;cursor:none;transition:background 0.3s ease, color 0.3s ease;}
+
+/* Custom cursor */
+.cursor{position:fixed;width:12px;height:12px;background:var(--coral);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.15s ease;transform:translate(-50%,-50%)}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--coral);border-radius:50%;pointer-events:none;z-index:9998;transition:transform 0.08s ease,opacity 0.3s;transform:translate(-50%,-50%);opacity:0.5}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:var(--bg-overlay);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:background 0.3s ease, border-color 0.3s ease;}
+.logo{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.2rem;color:var(--text-dark);letter-spacing:-0.02em}
+.logo span{color:var(--coral)}
+.nav-links{display:none;flex-direction:column;gap:1.5rem;list-style:none;align-items:flex-start;position:absolute;top:100%;right:3rem;background:var(--bg-card);padding:1.5rem;border:1px solid var(--border);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.1);min-width:200px;}
+.nav-links.mobile-active{display:flex;}
+.mobile-menu-btn{display:block;background:none;border:none;font-size:1.5rem;color:var(--text-dark);cursor:pointer;}
+.nav-links a{text-decoration:none;color:var(--text-mid);font-size:0.9rem;font-weight:500;transition:color 0.2s;position:relative;display:block;width:100%}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:var(--coral);transition:width 0.3s}
+.nav-links a:hover{color:var(--coral)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--text-dark);color:var(--cream)!important;padding:0.5rem 1.2rem;border-radius:50px;font-size:0.85rem!important;font-weight:500!important;transition:background 0.3s ease, color 0.3s ease;}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--coral)!important}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-mid);
+  transition: transform 0.2s;
+}
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+.lang-toggle {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  color: var(--text-dark);
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-width: 44px;
+  padding: 0.45rem 0.8rem;
+  transition: all 0.2s;
+}
+.lang-toggle:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 3rem 3rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0; transition: transform 0.1s ease-out;}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:0.35}
+.blob-1{width:500px;height:500px;background:var(--lavender);top:-100px;right:-100px;animation:float1 8s ease-in-out infinite}
+.blob-2{width:400px;height:400px;background:var(--peach);bottom:-50px;left:-80px;animation:float2 10s ease-in-out infinite}
+.blob-3{width:300px;height:300px;background:var(--mint);top:50%;left:40%;animation:float3 7s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,20px) scale(1.05)}}
+@keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-30px) scale(1.08)}}
+@keyframes float3{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,15px)}}
+
+.hero-content{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;width:100%}
+.hero-left{animation:slideUp 0.8s ease both}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--yellow);color:#5C4A1A;padding:0.4rem 1rem;border-radius:50px;font-size:0.8rem;font-weight:500;margin-bottom:1.5rem;border:1px solid #E8D070; transition: background 0.3s ease;}
+[data-theme="dark"] .tag { color: #E8D070; }
+.tag::before{content:'✦';font-size:0.7rem}
+
+h1{font-family:'Manrope',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:1.5rem}
+h1 .line-accent{color:var(--coral);display:block}
+h1 .line-sub{font-weight:400;font-size:0.6em;color:var(--text-mid);font-family:'Manrope',sans-serif;display:block;letter-spacing:0;margin-top:0.3rem}
+
+.hero-desc{color:var(--text-mid);line-height:1.7;font-size:1rem;max-width:420px;margin-bottom:2.5rem}
+
+.hero-btns{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--text-dark);color:var(--cream);padding:0.8rem 2rem;border-radius:50px;text-decoration:none;font-weight:500;font-size:0.9rem;transition:transform 0.2s,box-shadow 0.2s, background 0.3s ease, color 0.3s ease;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,31,26,0.2)}
+.btn-outline{background:transparent;color:var(--text-dark);padding:0.8rem 2rem;border-radius:50px;text-decoration:none;font-weight:500;font-size:0.9rem;border:1.5px solid var(--border);transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-outline:hover{border-color:var(--coral);color:var(--coral)}
+
+/* Floating bubbles */
+.hero-right{position:relative;height:480px;animation:slideUp 0.8s 0.2s ease both;opacity:0;animation-fill-mode:forwards}
+.avatar-card{background:var(--bg-card);border-radius:24px;border:1.5px solid var(--border);padding:2rem;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.08);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px; transition: background 0.3s ease, border-color 0.3s ease;}
+.avatar{width:100px;height:100px;background:linear-gradient(135deg,var(--lavender),var(--blue-soft));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2.5rem;border:3px solid var(--bg-card);box-shadow:0 4px 16px rgba(0,0,0,0.1);overflow:hidden; transition: border-color 0.3s ease;}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar-card h3{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.3rem; color:var(--text-dark);}
+.avatar-card p{color:var(--text-mid);font-size:0.8rem}
+.status-dot{display:inline-block;width:8px;height:8px;background:#4CAF50;border-radius:50%;margin-right:0.4rem}
+
+.bubble{position:absolute;border-radius:20px;padding:0.8rem 1.2rem;font-size:0.8rem;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.08);animation:bobble 4s ease-in-out infinite;white-space:nowrap; transition: background 0.3s ease, border-color 0.3s ease;}
+@keyframes bobble{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.bubble-1{background:var(--yellow);border:1.5px solid #E8D070;top:5%;left:-5%;color:#5C4A1A;animation-delay:0s}
+[data-theme="dark"] .bubble-1{color: #E8D070;}
+.bubble-2{background:var(--mint);border:1.5px solid #A8D8A0;top:15%;right:-10%;color:#1A5C20;animation-delay:1s}
+[data-theme="dark"] .bubble-2{color: #A8D8A0;}
+.bubble-3{background:var(--lavender);border:1.5px solid var(--lilac);bottom:20%;left:-15%;color:#3A2A7C;animation-delay:2s}
+[data-theme="dark"] .bubble-3{color: #B8A9E8;}
+.bubble-4{background:var(--bg-card);border:1.5px solid var(--border);bottom:5%;right:-5%;color:var(--text-dark);animation-delay:0.5s}
+.bubble-emoji{font-size:1rem;margin-right:0.4rem}
+
+/* Stats row */
+.stats-row{display:flex;gap:1.5rem;margin-top:2rem;align-items:center}
+.stat{text-align:center}
+.stat-num{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.8rem;color:var(--text-dark)}
+.stat-label{font-size:0.75rem;color:var(--text-light);margin-top:0.1rem}
+.stat-divider{width:1px;height:40px;background:var(--border)}
+
+/* MARQUEE */
+.marquee-section{padding:1.5rem 0;background:var(--text-dark);overflow:hidden;position:relative; transition: background 0.3s ease;}
+.marquee-track{display:flex;gap:2rem;animation:marquee 22s linear infinite;white-space:nowrap}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{display:inline-flex;align-items:center;gap:0.8rem;color:var(--cream);font-family:'Manrope',sans-serif;font-weight:600;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;flex-shrink:0}
+.marquee-dot{width:6px;height:6px;background:var(--coral);border-radius:50%;flex-shrink:0}
+
+/* ABOUT */
+.about{padding:7rem 3rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-visual{position:relative}
+.about-photo{width:100%;aspect-ratio:3/4;background:var(--peach);border-radius:24px;overflow:hidden;border:2px solid var(--border);position:relative;display:flex;align-items:center;justify-content:center;font-size:7rem; transition: border-color 0.3s ease;}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about-badge{position:absolute;bottom:-1rem;right:-1rem;background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:1rem 1.2rem;box-shadow:0 8px 24px rgba(0,0,0,0.1); transition: background 0.3s ease, border-color 0.3s ease;}
+.about-badge-num{font-family:'Manrope',sans-serif;font-size:1.5rem;font-weight:800;color:var(--coral)}
+.about-badge-txt{font-size:0.75rem;color:var(--text-mid);margin-top:0.1rem}
+
+.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);margin-bottom:1rem}
+.section-title{font-family:'Manrope',sans-serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.5rem}
+.about-text{color:var(--text-mid);line-height:1.8;margin-bottom:1.2rem;font-size:0.95rem}
+.skills-chips{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem}
+.chip{background:var(--peach);color:var(--text-dark);padding:0.4rem 1rem;border-radius:50px;font-size:0.8rem;font-weight:500;border:1px solid var(--border); transition: background 0.3s ease, border-color 0.3s ease;}
+.chip:nth-child(2n){background:var(--lavender);border-color:var(--lilac)}
+.chip:nth-child(3n){background:var(--mint);border-color:#A8D8A0}
+.chip:nth-child(4n){background:var(--yellow);border-color:#E8D070}
+[data-theme="dark"] .chip { color: var(--text-dark); }
+
+/* SERVICES */
+.services{padding:6rem 3rem;background:var(--peach); transition: background 0.3s ease;}
+.services-inner{max-width:1100px;margin:0 auto}
+.services-header{text-align:center;margin-bottom:3.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{background:var(--bg-card);border-radius:20px;padding:2rem;border:1.5px solid var(--border);position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s, background 0.3s ease, border-color 0.3s ease;cursor:default}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.1)}
+.service-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem}
+.service-card:nth-child(1) .service-icon{background:var(--lavender)}
+.service-card:nth-child(2) .service-icon{background:var(--yellow)}
+.service-card:nth-child(3) .service-icon{background:var(--mint)}
+.service-card h3{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.7rem}
+.service-card p{color:var(--text-mid);font-size:0.875rem;line-height:1.7}
+.service-corner{position:absolute;bottom:-20px;right:-20px;font-size:5rem;opacity:0.06;pointer-events:none}
+
+/* PORTFOLIO */
+.portfolio{padding:7rem 3rem;max-width:1100px;margin:0 auto}
+.portfolio-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+
+/* Portfolio Filters */
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+.filter-btn {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text-mid);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+}
+.filter-btn.active {
+  background: var(--text-dark);
+  color: var(--cream);
+  border-color: var(--text-dark);
+}
+
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.project-card{border-radius:20px;overflow:hidden;border:1.5px solid var(--border);cursor:pointer;transition:transform 0.3s,box-shadow 0.3s, opacity 0.3s, border-color 0.3s ease;text-decoration:none;color:inherit;display:block}
+.project-card.hide {display: none;}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.12)}
+.project-img{height:220px;display:flex;align-items:center;justify-content:center;font-size:4rem;position:relative;overflow:hidden}
+.project-card:nth-child(6n+1) .project-img{background:linear-gradient(135deg,var(--lavender),var(--blue-soft))}
+.project-card:nth-child(6n+2) .project-img{background:linear-gradient(135deg,var(--yellow),var(--peach))}
+.project-card:nth-child(6n+3) .project-img{background:linear-gradient(135deg,var(--mint),var(--blue-soft))}
+.project-card:nth-child(6n+4) .project-img{background:linear-gradient(135deg,var(--peach),var(--lavender))}
+.project-card:nth-child(6n+5) .project-img{background:linear-gradient(135deg,var(--blue-soft),var(--lavender))}
+.project-card:nth-child(6n+6) .project-img{background:linear-gradient(135deg,var(--mint),var(--yellow))}
+.project-img img{width:100%;height:100%;object-fit:cover;display:block}
+.project-hover{position:absolute;inset:0;background:rgba(42,31,26,0.85);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;font-size:0.9rem;color:white;font-weight:500;letter-spacing:0.05em}
+.project-card:hover .project-hover{opacity:1}
+.project-info{background:var(--bg-card);padding:1.2rem 1.5rem; transition: background 0.3s ease;}
+.project-tag{font-size:0.72rem;font-weight:600;color:var(--coral);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem}
+.project-info h3{font-family:'Manrope',sans-serif;font-weight:700;font-size:1rem;color:var(--text-dark)}
+.project-desc{margin-top:1rem;font-size:0.85rem;color:var(--text-mid);line-height:1.6;display:none;animation:fadeIn 0.3s ease forwards}
+.project-card.expanded .project-desc{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.project-desc ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem}
+.project-desc li{position:relative;padding-left:1.2rem}
+.project-desc li::before{content:'→';position:absolute;left:0;color:var(--coral);font-weight:bold}
+.project-desc .sub-list{margin-top:0.4rem;gap:0.3rem}
+.project-desc .sub-list li::before{content:'•';color:var(--text-light)}
+.click-more{margin-top:1.2rem;font-weight:600;color:var(--coral);display:inline-flex;align-items:center;gap:0.3rem;font-size:0.85rem;transition:gap 0.2s ease}
+.project-card:hover .click-more{gap:0.5rem}
+.click-more span{display:inline-block;transition:transform 0.3s ease}
+.project-card.expanded .click-more span{transform:rotate(-90deg)}
+
+/* PROCESS */
+.process{padding:6rem 3rem;background:var(--text-dark);color:var(--cream); transition: background 0.3s ease;}
+.process-inner{max-width:1100px;margin:0 auto}
+.process-header{text-align:center;margin-bottom:3.5rem}
+.process-header .section-label{color:var(--coral)}
+.process-header .section-title{color:var(--cream)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative}
+.steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:rgba(255,255,255,0.1);z-index:0}
+.step{text-align:center;position:relative;z-index:1}
+.step-circle{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.2rem; color:#2A1F1A;}
+.step:nth-child(1) .step-circle{background:var(--lavender)}
+.step:nth-child(2) .step-circle{background:var(--yellow)}
+.step:nth-child(3) .step-circle{background:var(--mint)}
+.step:nth-child(4) .step-circle{background:var(--peach)}
+.step:nth-child(5) .step-circle{background:var(--blue-soft)}
+.step h4{font-family:'Manrope',sans-serif;font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;color:var(--cream)}
+.step p{font-size:0.75rem;color:rgba(255,255,255,0.5);line-height:1.5}
+
+/* CONTACT */
+.contact{padding:7rem 3rem}
+.contact-inner{max-width:680px;margin:0 auto;text-align:center}
+.contact-card{background:var(--bg-card);border-radius:28px;padding:3.5rem;border:1.5px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,0.08); transition: background 0.3s ease, border-color 0.3s ease;}
+.contact-card .section-title{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1rem}
+.contact-card > p{color:var(--text-mid);margin-bottom:2rem;line-height:1.7}
+.contact-form{display:flex;flex-direction:column;gap:1rem;text-align:left}
+.form-group{display:flex;flex-direction:column;gap:0.4rem}
+.form-group label{font-size:0.8rem;font-weight:500;color:var(--text-mid)}
+.form-group input,.form-group textarea{border:1.5px solid var(--border);border-radius:12px;padding:0.75rem 1rem;font-size:0.9rem;font-family:'Manrope',sans-serif;background:var(--cream);color:var(--text-dark);outline:none;transition:border-color 0.2s, background 0.3s ease, color 0.3s ease;resize:none;width:100%}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--coral)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-submit{background:var(--coral);color:white;border:none;padding:1rem 2.5rem;border-radius:50px;font-family:'Manrope',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;transition:background 0.2s,transform 0.2s;align-self:flex-start;margin-top:0.5rem}
+.btn-submit:hover{background:var(--coral-dark);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem; transition: background 0.3s ease;}
+.footer-logo{font-family:'Manrope',sans-serif;font-weight:800;font-size:1.1rem;color:var(--cream)}
+.footer-logo span{color:var(--coral)}
+.social-links{display:flex;gap:1.5rem}
+.social-links a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s}
+.social-links a:hover{color:var(--coral)}
+.footer-copy{font-size:0.8rem}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Responsive */
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links {
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    box-shadow: none;
+    background: var(--bg-overlay);
+    align-items: center;
+  }
+  .hero{padding:7rem 1.5rem 3rem}
+  .hero-content{grid-template-columns:1fr;gap:3rem}
+  .hero-right{height:300px}
+  .about{grid-template-columns:1fr;padding:4rem 1.5rem;gap:3rem}
+  .services{padding:4rem 1.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .portfolio{padding:4rem 1.5rem}
+  .portfolio-grid{grid-template-columns:1fr}
+  .portfolio-header{flex-direction:column;align-items:flex-start}
+  .portfolio-filters {gap: 0.5rem;}
+  .filter-btn {padding: 0.4rem 1rem; font-size: 0.8rem;}
+  .process{padding:4rem 1.5rem}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .steps::before{display:none}
+  .contact{padding:4rem 1.5rem}
+  .contact-card{padding:2rem}
+  .form-row{grid-template-columns:1fr}
+  footer{flex-direction:column;align-items:center;text-align:center;padding:2rem}
+}
+/* Menu btn is displayed on all devices */
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="logo">Phuong<span>.</span></div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero" data-i18n="navHome">Home</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about" data-i18n="navAbout">About Me</a></li>
+    <li><button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">VI</button></li>
+    <li><button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button></li>
+    <li><a href="#contact" class="nav-cta" data-i18n="navContact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="tag" data-i18n="heroTag">Digital Marketing &amp; Planning</div>
+      <h1 data-i18n-html="heroTitle">
+        I create
+        <span class="line-accent">campaigns</span>
+        <span class="line-sub">that are effective, creative, and measurable ✨</span>
+      </h1>
+      <p class="hero-desc" data-i18n="heroDesc">I am a Marketer passionate about brand building and executing marketing strategies that bring real growth to businesses.</p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-primary" data-i18n="viewPortfolio">View portfolio →</a>
+        <a href="#" class="btn-outline" data-i18n="downloadCv">Download CV</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">3+</div>
+          <div class="stat-label" data-i18n="yearsExperience">Years of Experience</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">20+</div>
+          <div class="stat-label" data-i18n="campaigns">Campaigns</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label" data-i18n="partners">Partners</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="bubble bubble-1"><span class="bubble-emoji">📈</span><span data-i18n="digitalMarketing">Digital Marketing</span></div>
+      <div class="bubble bubble-2"><span class="bubble-emoji">📊</span><span data-i18n="dataAnalysis">Data Analysis</span></div>
+      <div class="bubble bubble-3"><span class="bubble-emoji">🎯</span><span data-i18n="planning">Planning</span></div>
+      <div class="bubble bubble-4"><span class="bubble-emoji">💡</span><span data-i18n="projectManagement">Project Management</span></div>
+      <div class="avatar-card">
+        <div class="avatar">
+          <img src="assets/about-photo.jpg" alt="Bui Bich Phuong">
+        </div>
+        <h3>Bui Bich Phuong</h3>
+        <p><span class="status-dot"></span><span data-i18n="marketingProfessional">Marketing Professional</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="digitalMarketing">Digital Marketing</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="dataAnalysis">Data Analysis</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="planning">Planning</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="projectManagement">Project Management</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="leadership">Leadership</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="campaignStrategy">Campaign Strategy</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="contentStrategy">Content Strategy</span></span>
+    
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="digitalMarketing">Digital Marketing</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="dataAnalysis">Data Analysis</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="planning">Planning</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="projectManagement">Project Management</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="leadership">Leadership</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="campaignStrategy">Campaign Strategy</span></span>
+    <span class="marquee-item"><span class="marquee-dot"></span><span data-i18n="contentStrategy">Content Strategy</span></span>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="about-visual reveal">
+    <div class="about-photo">
+      <img src="assets/about-photo.jpg" alt="Bui Bich Phuong">
+    </div>
+    <div class="about-badge">
+      <div class="about-badge-num">3+</div>
+      <div class="about-badge-txt" data-i18n="yearsExperience">Years of Experience</div>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="section-label" data-i18n="aboutLabel">About Me</div>
+    <h2 class="section-title" data-i18n-html="aboutTitle">Hello! I am<br>Bui Bich Phuong 👋</h2>
+    <p class="about-text" data-i18n="aboutText1">I am a Marketing professional with a strategic mindset and data-driven decision-making. I have extensive experience in planning and executing high-impact marketing campaigns.</p>
+    <p class="about-text" data-i18n="aboutText2">I believe a successful campaign requires a harmonious combination of creative content and deep customer understanding through Data Analysis.</p>
+    <div class="skills-chips">
+      <span class="chip" data-i18n="digitalMarketing">Digital Marketing</span>
+      <span class="chip" data-i18n="dataAnalysis">Data Analysis</span>
+      <span class="chip" data-i18n="planning">Planning</span>
+      <span class="chip" data-i18n="projectManagement">Project Management</span>
+      <span class="chip" data-i18n="leadership">Leadership</span>
+      <span class="chip" data-i18n="contentStrategy">Content Strategy</span>
+      <span class="chip">SEO / SEM</span>
+      <span class="chip" data-i18n="marketResearch">Market Research</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <div class="section-label" data-i18n="expertiseLabel">Expertise</div>
+      <h2 class="section-title" data-i18n="expertiseTitle">How I can help you</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🎯</div>
+        <h3 data-i18n="service1Title">Marketing Strategy &amp; Planning</h3>
+        <p data-i18n="service1Desc">Master planning, strategic direction, and optimal budget allocation to achieve business goals.</p>
+        <span class="service-corner">🎯</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">📊</div>
+        <h3 data-i18n="service2Title">Data Analysis</h3>
+        <p data-i18n="service2Desc">Analyze user data, evaluate campaign performance (ROI/ROAS) to make optimization decisions.</p>
+        <span class="service-corner">📊</span>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">🚀</div>
+        <h3 data-i18n="service3Title">Project Management</h3>
+        <p data-i18n="service3Desc">Manage marketing projects, coordinate teams, ensure progress and quality for each campaign phase.</p>
+        <span class="service-corner">🚀</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header reveal">
+    <div>
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title" data-i18n="featuredProjects">Featured Projects</h2>
+    </div>
+  </div>
+  
+  <div class="portfolio-filters reveal">
+    <button class="filter-btn active" data-filter="work-experience" data-i18n="filterWork">Work Experience</button>
+    <button class="filter-btn" data-filter="competitions" data-i18n="filterCompetitions">Competitions</button>
+    <button class="filter-btn" data-filter="marketing-proposals" data-i18n="filterProposals">Marketing Proposals</button>
+    <button class="filter-btn" data-filter="event-highlight" data-i18n="filterEvents">Event Highlight</button>
+  </div>
+
+  <div class="portfolio-grid" id="portfolioGrid">
+    <!-- Work Experience -->
+    <a href="marketing-campaign-one-mount.html" class="project-card reveal" data-category="work-experience">
+      <div class="project-img">
+        <img src="assets/project-one-mount.jpg" alt="Marketing Campaign - One Mount Real Estate preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterWork">Work Experience</div>
+        <h3>Marketing Campaign - One Mount Real Estate</h3>
+      </div>
+    </a>
+    <a href="shoppertainment-vccorp.html" class="project-card reveal" data-category="work-experience">
+      <div class="project-img">
+        <img src="assets/project-hover.png" alt="Shoppertainment Race Festive Season x VCCorp preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterWork">Work Experience</div>
+        <h3>Shoppertainment Race Festive Season x VCCorp</h3>
+      </div>
+    </a>
+    <a href="project-development-one-mount.html" class="project-card reveal" data-category="work-experience">
+      <div class="project-img">
+        <img src="assets/project-development-one-mount.jpg" alt="Project Development Collaborator - One Mount Real Estate preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterWork">Work Experience</div>
+        <h3>Project Development Collaborator - One Mount Real Estate</h3>
+      </div>
+    </a>
+    <a href="content-freelancer-timo.html" class="project-card reveal" data-category="work-experience">
+      <div class="project-img">
+        <img src="assets/project-timo.png" alt="Content Freelancer - Timo Digital Bank by BVBank preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterWork">Work Experience</div>
+        <h3>Content Freelancer - Timo Digital Bank by BVBank</h3>
+      </div>
+    </a>
+    <a href="content-freelancer-ai-fire.html" class="project-card reveal" data-category="work-experience">
+      <div class="project-img">
+        <img src="assets/project-ai-fire.png" alt="Content Freelancer - AI Fire preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterWork">Work Experience</div>
+        <h3>Content Freelancer - AI Fire</h3>
+      </div>
+    </a>
+
+    <!-- Competitions -->
+    <a href="boo-z-marketer-2023.html" class="project-card reveal" data-category="competitions">
+      <div class="project-img">
+        <img src="assets/project-boo.png" alt="BOO - Z Marketer 2023 preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterCompetitions">Competitions</div>
+        <h3>"BOO" - Z Marketer 2023</h3>
+      </div>
+    </a>
+    <a href="heineken-strategy-analysis.html" class="project-card reveal" data-category="competitions">
+      <div class="project-img">
+        <img src="assets/project-heineken.png" alt="Heineken's Strategy Analysis preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterCompetitions">Competitions</div>
+        <h3>Heineken's Strategy Analysis</h3>
+      </div>
+    </a>
+    <a href="revelation-thien-du.html" class="project-card reveal" data-category="competitions">
+      <div class="project-img">
+        <img src="assets/project-thien-du.png" alt="Revelation Thien Du preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterCompetitions">Competitions</div>
+        <h3>Revelation Thiên Dụ</h3>
+      </div>
+    </a>
+    <!-- Marketing Proposals -->
+    <a href="keyence-marketing-plan.html" class="project-card reveal" data-category="marketing-proposals">
+      <div class="project-img">
+        <img src="assets/project-keyence.png" alt="KEYENCE Marketing Plan preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterProposals">Marketing Proposals</div>
+        <h3>KEYENCE Marketing Plan</h3>
+      </div>
+    </a>
+    <a href="hanoia-new-product-concept.html" class="project-card reveal" data-category="marketing-proposals">
+      <div class="project-img">
+        <img src="assets/project-hanoia.png" alt="Hanoia's new product concept preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterProposals">Marketing Proposals</div>
+        <h3>Hanoia's new product concept</h3>
+      </div>
+    </a>
+    <a href="tan-cuong-hoang-phuc-marketing-proposal.html" class="project-card reveal" data-category="marketing-proposals">
+      <div class="project-img">
+        <img src="assets/project-tan-cuong.png" alt="Tan Cuong Hoang Phuc Marketing Proposal preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterProposals">Marketing Proposals</div>
+        <h3>Tân Cương Hoàng Phúc Marketing Proposal</h3>
+      </div>
+    </a>
+
+    <!-- Event Highlight -->
+    <a href="catch-your-glimpse-event.html" class="project-card reveal" data-category="event-highlight">
+      <div class="project-img">
+        <img src="assets/project-catch-your-glimpse.png" alt="Catch Your Glimpse Event preview">
+        <div class="project-hover" data-i18n="viewDetails">View details →</div>
+      </div>
+      <div class="project-info">
+        <div class="project-tag" data-i18n="filterEvents">Event Highlight</div>
+        <h3>"Catch Your Glimpse" Event - Head of the Organising Committee</h3>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="process-header reveal">
+      <div class="section-label" data-i18n="processLabel">Working Process</div>
+      <h2 class="section-title" data-i18n="processTitle">How I execute</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-circle">🔍</div>
+        <h4 data-i18n="processResearch">Research</h4>
+        <p data-i18n="processResearchDesc">Market &amp; data analysis</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">💡</div>
+        <h4 data-i18n="processIdeation">Ideation</h4>
+        <p data-i18n="processIdeationDesc">Brainstorm &amp; concept building</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">📝</div>
+        <h4 data-i18n="processPlanning">Planning</h4>
+        <p data-i18n="processPlanningDesc">KPI &amp; budget allocation</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">🚀</div>
+        <h4 data-i18n="processExecution">Execution</h4>
+        <p data-i18n="processExecutionDesc">Project management &amp; coordination</p>
+      </div>
+      <div class="step">
+        <div class="step-circle">📊</div>
+        <h4 data-i18n="processMeasurement">Measurement</h4>
+        <p data-i18n="processMeasurementDesc">Evaluation &amp; optimization</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-card reveal">
+      <div class="section-label" data-i18n="contactLabel">Contact</div>
+      <h2 class="section-title" data-i18n-html="contactTitle">Let's create<br>explosive campaigns together! 🚀</h2>
+      <p data-i18n="contactDesc">Looking for a partner for your upcoming marketing strategy? Let's connect.</p>
+      
+      <!-- Connect with Formspree. Thay đổi phuong.bb281@gmail.com bằng ID form của bạn nếu cần -->
+      <form class="contact-form" action="https://formspree.io/f/phuong.bb281@gmail.com" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name" data-i18n="formName">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" data-i18n-placeholder="formNamePlaceholder" required>
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="formEmail">Email</label>
+            <input type="email" id="email" name="_replyto" placeholder="hello@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject" data-i18n="formSubject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="I want to collaborate on..." data-i18n-placeholder="formSubjectPlaceholder" required>
+        </div>
+        <div class="form-group">
+          <label for="message" data-i18n="formMessage">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." data-i18n-placeholder="formMessagePlaceholder" required></textarea>
+        </div>
+        <button class="btn-submit" type="submit" data-i18n="formSubmit">Send Message ✉️</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">Phuong<span>.</span></div>
+  <div class="social-links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Facebook</a>
+    <a href="#">Email</a>
+  </div>
+  <div class="footer-copy" data-i18n="footerCopy">© 2026 Bui Bich Phuong. All rights reserved.</div>
+</footer>
+
+<script>
+const translations = {
+  en: {
+    navHome: 'Home',
+    navAbout: 'About Me',
+    navContact: 'Contact',
+    heroTag: 'Digital Marketing & Planning',
+    heroTitle: 'I create<span class="line-accent">campaigns</span><span class="line-sub">that are effective, creative, and measurable ✨</span>',
+    heroDesc: 'I am a Marketer passionate about brand building and executing marketing strategies that bring real growth to businesses.',
+    viewPortfolio: 'View portfolio →',
+    downloadCv: 'Download CV',
+    yearsExperience: 'Years of Experience',
+    campaigns: 'Campaigns',
+    partners: 'Partners',
+    digitalMarketing: 'Digital Marketing',
+    dataAnalysis: 'Data Analysis',
+    planning: 'Planning',
+    projectManagement: 'Project Management',
+    marketingProfessional: 'Marketing Professional',
+    leadership: 'Leadership',
+    campaignStrategy: 'Campaign Strategy',
+    contentStrategy: 'Content Strategy',
+    marketResearch: 'Market Research',
+    aboutLabel: 'About Me',
+    aboutTitle: 'Hello! I am<br>Bui Bich Phuong 👋',
+    aboutText1: 'I am a Marketing professional with a strategic mindset and data-driven decision-making. I have extensive experience in planning and executing high-impact marketing campaigns.',
+    aboutText2: 'I believe a successful campaign requires a harmonious combination of creative content and deep customer understanding through Data Analysis.',
+    expertiseLabel: 'Expertise',
+    expertiseTitle: 'How I can help you',
+    service1Title: 'Marketing Strategy & Planning',
+    service1Desc: 'Master planning, strategic direction, and optimal budget allocation to achieve business goals.',
+    service2Title: 'Data Analysis',
+    service2Desc: 'Analyze user data, evaluate campaign performance (ROI/ROAS) to make optimization decisions.',
+    service3Title: 'Project Management',
+    service3Desc: 'Manage marketing projects, coordinate teams, ensure progress and quality for each campaign phase.',
+    featuredProjects: 'Featured Projects',
+    filterWork: 'Work Experience',
+    filterCompetitions: 'Competitions',
+    filterProposals: 'Marketing Proposals',
+    filterEvents: 'Event Highlight',
+    viewDetails: 'View details →',
+    clickMore: 'Click <span>➔</span> for more details',
+    clickCollapse: 'Click <span>➔</span> to collapse',
+    processLabel: 'Working Process',
+    processTitle: 'How I execute',
+    processResearch: 'Research',
+    processResearchDesc: 'Market & data analysis',
+    processIdeation: 'Ideation',
+    processIdeationDesc: 'Brainstorm & concept building',
+    processPlanning: 'Planning',
+    processPlanningDesc: 'KPI & budget allocation',
+    processExecution: 'Execution',
+    processExecutionDesc: 'Project management & coordination',
+    processMeasurement: 'Measurement',
+    processMeasurementDesc: 'Evaluation & optimization',
+    contactLabel: 'Contact',
+    contactTitle: "Let's create<br>explosive campaigns together! 🚀",
+    contactDesc: "Looking for a partner for your upcoming marketing strategy? Let's connect.",
+    formName: 'Your Name',
+    formNamePlaceholder: 'John Doe',
+    formEmail: 'Email',
+    formSubject: 'Subject',
+    formSubjectPlaceholder: 'I want to collaborate on...',
+    formMessage: 'Message',
+    formMessagePlaceholder: 'Tell me about your project...',
+    formSubmit: 'Send Message ✉️',
+    footerCopy: '© 2026 Bui Bich Phuong. All rights reserved.'
+  },
+  vi: {
+    navHome: 'Trang chủ',
+    navAbout: 'Giới thiệu',
+    navContact: 'Liên hệ',
+    heroTag: 'Digital Marketing & Lập kế hoạch',
+    heroTitle: 'Tôi tạo nên<span class="line-accent">chiến dịch</span><span class="line-sub">hiệu quả, sáng tạo và đo lường được ✨</span>',
+    heroDesc: 'Tôi là một Marketer yêu thích xây dựng thương hiệu và triển khai các chiến lược marketing mang lại tăng trưởng thực tế cho doanh nghiệp.',
+    viewPortfolio: 'Xem portfolio →',
+    downloadCv: 'Tải CV',
+    yearsExperience: 'Năm kinh nghiệm',
+    campaigns: 'Chiến dịch',
+    partners: 'Đối tác',
+    digitalMarketing: 'Digital Marketing',
+    dataAnalysis: 'Phân tích dữ liệu',
+    planning: 'Lập kế hoạch',
+    projectManagement: 'Quản lý dự án',
+    marketingProfessional: 'Chuyên viên Marketing',
+    leadership: 'Lãnh đạo',
+    campaignStrategy: 'Chiến lược chiến dịch',
+    contentStrategy: 'Chiến lược nội dung',
+    marketResearch: 'Nghiên cứu thị trường',
+    aboutLabel: 'Giới thiệu',
+    aboutTitle: 'Xin chào! Tôi là<br>Bui Bich Phuong 👋',
+    aboutText1: 'Tôi là một Marketing professional có tư duy chiến lược và ra quyết định dựa trên dữ liệu. Tôi có kinh nghiệm lập kế hoạch và triển khai các chiến dịch marketing tạo tác động rõ ràng.',
+    aboutText2: 'Tôi tin rằng một chiến dịch thành công cần kết hợp hài hòa giữa nội dung sáng tạo và sự thấu hiểu khách hàng thông qua phân tích dữ liệu.',
+    expertiseLabel: 'Chuyên môn',
+    expertiseTitle: 'Tôi có thể hỗ trợ bạn như thế nào',
+    service1Title: 'Chiến lược & Lập kế hoạch Marketing',
+    service1Desc: 'Xây dựng master plan, định hướng chiến lược và phân bổ ngân sách tối ưu để đạt mục tiêu kinh doanh.',
+    service2Title: 'Phân tích dữ liệu',
+    service2Desc: 'Phân tích dữ liệu người dùng, đánh giá hiệu quả chiến dịch (ROI/ROAS) để đưa ra quyết định tối ưu.',
+    service3Title: 'Quản lý dự án',
+    service3Desc: 'Quản lý dự án marketing, phối hợp đội nhóm, đảm bảo tiến độ và chất lượng cho từng giai đoạn chiến dịch.',
+    featuredProjects: 'Dự án nổi bật',
+    filterWork: 'Kinh nghiệm làm việc',
+    filterCompetitions: 'Cuộc thi',
+    filterProposals: 'Đề xuất Marketing',
+    filterEvents: 'Sự kiện nổi bật',
+    viewDetails: 'Xem chi tiết →',
+    clickMore: 'Bấm <span>➔</span> để xem thêm',
+    clickCollapse: 'Bấm <span>➔</span> để thu gọn',
+    processLabel: 'Quy trình làm việc',
+    processTitle: 'Cách tôi triển khai',
+    processResearch: 'Nghiên cứu',
+    processResearchDesc: 'Phân tích thị trường & dữ liệu',
+    processIdeation: 'Ý tưởng',
+    processIdeationDesc: 'Brainstorm & xây dựng concept',
+    processPlanning: 'Lập kế hoạch',
+    processPlanningDesc: 'KPI & phân bổ ngân sách',
+    processExecution: 'Triển khai',
+    processExecutionDesc: 'Quản lý dự án & phối hợp',
+    processMeasurement: 'Đo lường',
+    processMeasurementDesc: 'Đánh giá & tối ưu',
+    contactLabel: 'Liên hệ',
+    contactTitle: 'Cùng tạo nên<br>những chiến dịch bùng nổ! 🚀',
+    contactDesc: 'Bạn đang tìm một người đồng hành cho chiến lược marketing sắp tới? Hãy kết nối với tôi.',
+    formName: 'Tên của bạn',
+    formNamePlaceholder: 'Nguyen Van A',
+    formEmail: 'Email',
+    formSubject: 'Chủ đề',
+    formSubjectPlaceholder: 'Tôi muốn hợp tác về...',
+    formMessage: 'Tin nhắn',
+    formMessagePlaceholder: 'Chia sẻ thêm về dự án của bạn...',
+    formSubmit: 'Gửi tin nhắn ✉️',
+    footerCopy: '© 2026 Bui Bich Phuong. Đã đăng ký bản quyền.'
+  }
+};
+
+let currentLang = localStorage.getItem('siteLang') || 'en';
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  const dictionary = translations[lang];
+  document.documentElement.lang = lang;
+  localStorage.setItem('siteLang', lang);
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dictionary[key]) el.textContent = dictionary[key];
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dictionary[key]) el.innerHTML = dictionary[key];
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dictionary[key]) el.setAttribute('placeholder', dictionary[key]);
+  });
+
+  document.querySelectorAll('.project-card.expanded .click-more').forEach(el => {
+    el.innerHTML = dictionary.clickCollapse;
+  });
+
+  const langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.textContent = lang === 'en' ? 'VI' : 'EN';
+    langToggle.setAttribute('aria-label', lang === 'en' ? 'Switch to Vietnamese' : 'Switch to English');
+  }
+}
+
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+
+function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+document.querySelectorAll('a, button, input, textarea, .service-card, .project-card, label').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(1.8)';
+    ring.style.opacity = '0';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+    ring.style.opacity = '0.5';
+  });
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+      // Close dropdown menu if open
+      document.getElementById('navLinks').classList.remove('mobile-active');
+    }
+  });
+});
+
+// Mobile menu toggle
+const mobileBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+mobileBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('mobile-active');
+});
+
+// Language toggle
+const langToggle = document.getElementById('langToggle');
+if (langToggle) {
+  langToggle.addEventListener('click', () => {
+    applyLanguage(currentLang === 'en' ? 'vi' : 'en');
+  });
+}
+
+// Dark mode toggle
+const themeToggle = document.getElementById('theme-toggle');
+const htmlEl = document.documentElement;
+let isDark = false;
+
+themeToggle.addEventListener('click', () => {
+  isDark = !isDark;
+  if(isDark) {
+    htmlEl.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️';
+  } else {
+    htmlEl.setAttribute('data-theme', 'light');
+    themeToggle.textContent = '🌙';
+  }
+});
+
+// Parallax for hero background
+const heroBg = document.getElementById('heroBg');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  // Apply a subtle translate on Y axis
+  if(scrollY < window.innerHeight) {
+    heroBg.style.transform = `translateY(${scrollY * 0.4}px)`;
+  }
+});
+
+// Portfolio Filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+const applyPortfolioFilter = (filterValue, immediate = false) => {
+  projectCards.forEach(card => {
+    if (card.getAttribute('data-category') === filterValue) {
+      card.style.display = 'block';
+      const showCard = () => card.style.opacity = '1';
+      if (immediate) {
+        showCard();
+      } else {
+        setTimeout(showCard, 50);
+      }
+    } else {
+      card.style.opacity = '0';
+      const hideCard = () => card.style.display = 'none';
+      if (immediate) {
+        hideCard();
+      } else {
+        setTimeout(hideCard, 300);
+      }
+    }
+  });
+};
+
+applyPortfolioFilter('work-experience', true);
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Remove active class from all
+    filterBtns.forEach(b => b.classList.remove('active'));
+    // Add active to clicked
+    btn.classList.add('active');
+    
+    const filterValue = btn.getAttribute('data-filter');
+    applyPortfolioFilter(filterValue);
+  });
+});
+
+// Expand project details
+projectCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    const hasDesc = card.querySelector('.project-desc');
+    if (hasDesc) {
+      e.preventDefault();
+      card.classList.toggle('expanded');
+      const moreBtn = card.querySelector('.click-more');
+      if (card.classList.contains('expanded')) {
+        if (moreBtn) moreBtn.innerHTML = translations[currentLang].clickCollapse;
+      } else {
+        if (moreBtn) moreBtn.innerHTML = translations[currentLang].clickMore;
+      }
+    }
+  });
+});
+
+applyLanguage(currentLang);
+</script>
+</body>
+</html>
