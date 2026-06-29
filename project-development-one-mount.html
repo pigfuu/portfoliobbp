@@ -17,8 +17,18 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 .content{background:var(--bg-card);border:1.5px solid var(--border);border-radius:20px;padding:2rem}
 .content h2{font-size:1.1rem;margin-bottom:0.8rem;color:var(--text-dark)}
 .content p{color:var(--text-mid);margin-bottom:1.5rem}
-.placeholder{border-top:1px solid var(--border);padding-top:1.5rem;color:var(--text-light)}
-@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}}
+.content ul{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.content li{position:relative;padding-left:1.4rem;color:var(--text-mid)}
+.content li::before{content:'→';position:absolute;left:0;color:var(--coral);font-weight:800}
+.content strong{color:var(--text-dark);font-weight:800}
+.content a{color:var(--coral);font-weight:800;text-decoration:none}
+.content a:hover{text-decoration:underline}
+.highlight-title{margin-top:2rem;margin-bottom:1rem;font-size:1.1rem;color:var(--text-dark)}
+.detail-image{width:100%;display:block;border-radius:16px;border:1.5px solid var(--border)}
+.image-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.image-pair .highlight-title{margin-top:0}
+.image-pair .detail-image{height:220px;object-fit:cover}
+@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}.image-pair{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -28,10 +38,23 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
   <div class="label">Work Experience</div>
   <h1>Project Development Collaborator - One Mount Real Estate</h1>
   <section class="content" aria-label="Project details">
-    <h2>Description</h2>
-    <p>Project description will be updated soon.</p>
-    <h2>Detailed Information</h2>
-    <p class="placeholder">Detailed information will be added later.</p>
+    <ul>
+      <li><a href="https://www.tiktok.com/@muanhaodau" target="_blank" rel="noopener">Chuyện Mua Nhà</a>: Scaled the channel from <strong>~1.7K to 4.4K+</strong> followers, driving strong engagement in the real estate niche.</li>
+      <li><a href="https://www.tiktok.com/@nhadatoh" target="_blank" rel="noopener">Nhà Đất OH</a>: Grew from <strong>170 to 3K+</strong> followers, expanding audience reach through targeted content.</li>
+      <li><a href="https://drive.google.com/drive/folders/1XgUPQ3lxVH-5BSy4aFJ34SKH2I4OAUTm" target="_blank" rel="noopener">Planning & Tracking</a>: Developed and executed data-driven content strategies using tools such as TikTok Business Suite, TikTok Insights & Trends, Sprout Social, HubSpot, Power BI to monitor performance, uncover insights, and guide growth.</li>
+    </ul>
+    <div class="image-pair">
+      <div>
+        <h2 class="highlight-title">Content Plan</h2>
+        <img class="detail-image" src="assets/project-development-content-plan.png" alt="Content plan screenshot">
+      </div>
+      <div>
+        <h2 class="highlight-title">Content Pillar</h2>
+        <img class="detail-image" src="assets/project-development-content-pillar.png" alt="Content pillar screenshot">
+      </div>
+    </div>
+    <h2 class="highlight-title">Highlight Videos</h2>
+    <img class="detail-image" src="assets/project-development-highlight-videos.png" alt="Highlight videos screenshot">
   </section>
 </main>
 </body>
