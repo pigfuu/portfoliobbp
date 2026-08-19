@@ -17,8 +17,36 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 .content{background:var(--bg-card);border:1.5px solid var(--border);border-radius:20px;padding:2rem}
 .content h2{font-size:1.1rem;margin-bottom:0.8rem;color:var(--text-dark)}
 .content p{color:var(--text-mid);margin-bottom:1.5rem}
-.placeholder{border-top:1px solid var(--border);padding-top:1.5rem;color:var(--text-light)}
-@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}}
+.campaign-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.8rem}
+.campaign-tab{border:1.5px solid var(--border);border-radius:999px;background:var(--cream);color:var(--text-mid);font-family:'Manrope',sans-serif;font-size:0.9rem;font-weight:800;line-height:1.2;padding:0.9rem 1rem;cursor:pointer;transition:background 0.2s ease,border-color 0.2s ease,color 0.2s ease,transform 0.2s ease}
+.campaign-tab:hover,.campaign-tab.active{background:var(--coral);border-color:var(--coral);color:#fff;transform:translateY(-1px)}
+.campaign-detail{display:none;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.campaign-detail.active{display:block}
+.campaign-detail h2{margin-bottom:0;color:var(--coral)}
+.campaign-heading{position:relative;min-height:150px;padding:1rem 12rem 0 0}
+.campaign-heading h2{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;letter-spacing:-0.03em;color:var(--text-dark);margin-bottom:0.8rem;text-transform:uppercase}
+.campaign-kicker{font-size:0.95rem;font-weight:800;color:var(--coral);margin-bottom:1rem}
+.campaign-summary{font-size:1rem;color:var(--text-mid);max-width:620px;margin-bottom:0}
+.campaign-logo{position:absolute;top:0;right:0;width:min(170px,24%);height:auto}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0.9rem;margin-top:2rem}
+.metric{background:var(--cream);border:1.5px solid var(--border);border-radius:16px;padding:1.1rem 1rem;min-height:122px}
+.metric-number{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1;font-weight:800;color:var(--coral);letter-spacing:-0.03em;margin-bottom:0.7rem;overflow-wrap:anywhere}
+.metric-number.long{font-size:clamp(1.35rem,2.5vw,2rem);line-height:1.08}
+.metric-label{font-size:0.86rem;line-height:1.35;font-weight:800;color:var(--text-dark)}
+.detail-section{margin-top:2rem}
+.detail-section h3{font-size:1.25rem;font-weight:800;color:var(--text-dark);margin-bottom:0.8rem}
+.detail-section p{color:var(--text-mid);margin-bottom:0}
+.role-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
+.role-card{background:var(--cream);border:1.5px solid var(--border);border-radius:16px;padding:1.2rem}
+.role-card h4{font-size:1rem;font-weight:800;color:var(--text-dark);margin-bottom:0.8rem}
+.role-card ul{list-style:none;display:grid;gap:0.55rem}
+.role-card li{color:var(--text-mid);font-size:0.92rem;line-height:1.4}
+.role-card li::before{content:'→';color:var(--coral);font-weight:800;margin-right:0.45rem}
+.role-action{display:flex;align-items:center;justify-content:center;gap:0.5rem;width:fit-content;margin:1.4rem auto 0;background:var(--text-dark);color:var(--cream);padding:0.8rem 1.6rem;border-radius:999px;text-decoration:none;font-size:0.9rem;font-weight:800;text-align:center;transition:transform 0.2s ease,box-shadow 0.2s ease,background 0.2s ease}
+.role-action:hover{background:var(--coral);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,31,26,0.16)}
+@media(max-width:760px){.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}.campaign-tabs{grid-template-columns:1fr}.campaign-tab{border-radius:14px}.campaign-heading{padding:0;min-height:0}.campaign-logo{position:static;width:130px;margin-bottom:1rem}.campaign-heading h2{font-size:2rem}.role-grid{grid-template-columns:1fr}}
+@media(max-width:420px){.metrics-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -28,11 +56,104 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
   <div class="label">Work Experience</div>
   <h1>Marketing Campaign - One Mount Real Estate</h1>
   <section class="content" aria-label="Project details">
-    <h2>Description</h2>
-    <p>Project description will be updated soon.</p>
-    <h2>Detailed Information</h2>
-    <p class="placeholder">Detailed information will be added later.</p>
+    <div class="campaign-tabs" role="tablist" aria-label="Marketing campaign categories">
+      <button class="campaign-tab active" type="button" role="tab" aria-selected="true" aria-controls="loyalty-detail" data-target="loyalty-detail">Loyalty Marketing</button>
+      <button class="campaign-tab" type="button" role="tab" aria-selected="false" aria-controls="branded-detail" data-target="branded-detail">Branded Residences Marketing</button>
+      <button class="campaign-tab" type="button" role="tab" aria-selected="false" aria-controls="premium-detail" data-target="premium-detail">Premium Project Marketing</button>
+    </div>
+    <div class="campaign-detail active" id="loyalty-detail" role="tabpanel">
+      <div class="campaign-heading">
+        <img class="campaign-logo" src="assets/allstar-club-logo.png" alt="Allstar Club logo">
+        <h2>ALLSTAR CLUB</h2>
+        <p class="campaign-kicker">Loyalty Marketing | OneHousing × Techcombank</p>
+        <p class="campaign-summary">Building a loyalty ecosystem to engage and connect 1,500+ Techcombank PRMs and 110+ OneHousing Sales Agents.</p>
+      </div>
+      <div class="metrics-grid" aria-label="Allstar Club key metrics">
+        <div class="metric">
+          <div class="metric-number">03</div>
+          <div class="metric-label">Loyalty Programs</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">1,500+</div>
+          <div class="metric-label">Techcombank PRMs</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number">110+</div>
+          <div class="metric-label">OneHousing Sales Agents</div>
+        </div>
+        <div class="metric">
+          <div class="metric-number long">VND 20,000B+</div>
+          <div class="metric-label">GMV contributed</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <h3>1. Context</h3>
+        <p>OneHousing and Techcombank need to align their sales forces to drive referrals and property sales. To sustain engagement, a loyalty ecosystem is essential to recognize and reward the team's ongoing contributions. Furthermore, this requires a transparent tracking mechanism for KPIs, incentives, and rewards, supported by a unified communication platform to keep all stakeholders aligned on active programs.</p>
+      </div>
+      <div class="detail-section">
+        <h3>2. My role</h3>
+        <div class="role-grid" aria-label="My role responsibilities">
+          <div class="role-card">
+            <h4>Program Strategy</h4>
+            <ul>
+              <li>Program mechanics</li>
+              <li>KPI</li>
+              <li>Incentive structure</li>
+            </ul>
+          </div>
+          <div class="role-card">
+            <h4>Engagement</h4>
+            <ul>
+              <li>Internal communication</li>
+              <li>Engagement campaigns</li>
+              <li>Recognition activities</li>
+            </ul>
+          </div>
+          <div class="role-card">
+            <h4>Digital &amp; Data</h4>
+            <ul>
+              <li>Vibe-code website onehousing.club</li>
+              <li>Dashboard</li>
+              <li>Program tracking</li>
+            </ul>
+          </div>
+          <div class="role-card">
+            <h4>Operations</h4>
+            <ul>
+              <li>Policy</li>
+              <li>Reward distribution</li>
+              <li>Stakeholder alignment</li>
+            </ul>
+          </div>
+        </div>
+        <a class="role-action" href="https://www.onehousing.club/" target="_blank" rel="noopener noreferrer">Check Allstar's website out there!</a>
+      </div>
+    </div>
+    <div class="campaign-detail" id="branded-detail" role="tabpanel">
+      <h2>Branded Residences Marketing</h2>
+    </div>
+    <div class="campaign-detail" id="premium-detail" role="tabpanel">
+      <h2>Premium Project Marketing</h2>
+    </div>
   </section>
 </main>
+<script>
+const campaignTabs = document.querySelectorAll('.campaign-tab');
+const campaignDetails = document.querySelectorAll('.campaign-detail');
+
+campaignTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    campaignTabs.forEach(item => {
+      item.classList.remove('active');
+      item.setAttribute('aria-selected', 'false');
+    });
+    campaignDetails.forEach(panel => panel.classList.remove('active'));
+
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.target).classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
