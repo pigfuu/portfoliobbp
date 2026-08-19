@@ -17,8 +17,15 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 .content{background:var(--bg-card);border:1.5px solid var(--border);border-radius:20px;padding:2rem}
 .content h2{font-size:1.1rem;margin-bottom:0.8rem;color:var(--text-dark)}
 .content p{color:var(--text-mid);margin-bottom:1.5rem}
+.description-list{display:grid;gap:1rem;margin-bottom:1.5rem;color:var(--text-mid)}
+.description-list p{margin-bottom:0}
+.arrow{color:var(--coral);font-weight:800}
+.highlight{color:var(--coral);font-weight:800}
+.highlight-link{color:var(--coral);font-weight:800;text-decoration:underline;text-underline-offset:0.18em}
+.image-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem}
+.detail-image{width:100%;height:auto;border-radius:16px;border:1.5px solid var(--border);display:block}
 .placeholder{border-top:1px solid var(--border);padding-top:1.5rem;color:var(--text-light)}
-@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}}
+@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}.image-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -28,10 +35,15 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
   <div class="label">Work Experience</div>
   <h1>Content Freelancer - AI Fire</h1>
   <section class="content" aria-label="Project details">
-    <h2>Description</h2>
-    <p>Project description will be updated soon.</p>
-    <h2>Detailed Information</h2>
-    <p class="placeholder">Detailed information will be added later.</p>
+    <div class="description-list">
+      <p><span class="arrow">→</span> <a class="highlight-link" href="https://www.aifire.co/" target="_blank" rel="noopener">Newsletter:</a> Created and managed daily news content, producing <span class="highlight">~2,000-word articles per story</span> to build consistent audience engagement and establish <span class="highlight">AI FIRE</span> as a reliable source of AI industry updates.</p>
+      <p><span class="arrow">→</span> <span class="highlight">Community Growth:</span> Grew the <a class="highlight-link" href="https://www.facebook.com/groups/aifire.co/posts/1327430237862282/?_rdc=1&amp;_rdr#" target="_blank" rel="noopener">Facebook Group</a> from <span class="highlight">6xx to 8K+ members</span> through engaging and relevant content, strengthening community reach and audience retention.</p>
+      <p><span class="arrow">→</span> <span class="highlight">Social Media &amp; Performance:</span> Managed <a class="highlight-link" href="https://google.com/url?sa=D&amp;q=https://x.com/aifireco&amp;ust=1787148840000000&amp;usg=AOvVaw2o-lPpL4C3eavflQv-zeS-&amp;hl=en" target="_blank" rel="noopener">Twitter</a> <span class="highlight">(2 posts/day)</span> and <a class="highlight-link" href="https://linkedin.com/company/aifireco/" target="_blank" rel="noopener">LinkedIn</a> <span class="highlight">(2 posts/day)</span> content strategies, achieving <span class="highlight">700K+ weekly impressions</span> and expanding <span class="highlight">AI FIRE’s visibility</span> across social platforms.</p>
+    </div>
+    <div class="image-grid" aria-label="AI FIRE content examples">
+      <img class="detail-image" src="assets/ai-fire-detail-1.jpg" alt="AI FIRE content example">
+      <img class="detail-image" src="assets/ai-fire-detail-2.jpg" alt="AI FIRE content example">
+    </div>
   </section>
 </main>
 </body>
