@@ -57,6 +57,13 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 .performance-link{display:inline-flex;align-items:center;gap:0.45rem;width:fit-content;color:var(--coral);font-size:0.92rem;font-weight:800;text-decoration:none}
 .performance-link::before{content:'→';font-weight:800}
 .performance-link:hover{text-decoration:underline}
+.video-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.4rem}
+.video-preview{display:grid;place-items:center;gap:0.75rem;aspect-ratio:16/9;background:linear-gradient(rgba(42,31,26,0.28),rgba(42,31,26,0.58)),var(--video-preview-image) center/cover;border:1.5px solid var(--border);border-radius:16px;color:#fff;text-decoration:none;text-align:center;overflow:hidden;transition:transform 0.2s ease,box-shadow 0.2s ease}
+.video-preview.first{--video-preview-image:url('assets/premium-video-preview.png')}
+.video-preview.second{--video-preview-image:url('assets/premium-video-preview-2.png')}
+.video-preview:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(42,31,26,0.18)}
+.video-play{display:flex;align-items:center;justify-content:center;width:58px;height:58px;background:rgba(255,255,255,0.16);border:1.5px solid rgba(255,255,255,0.42);border-radius:50%;font-size:1.45rem}
+.video-title{font-size:1rem;font-weight:800}
 .performance-gallery{display:grid;gap:1rem}
 .performance-gallery-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 .performance-gallery-row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -65,6 +72,10 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 .performance-gallery-row.digital-screens img{aspect-ratio:4/5;height:100%;object-fit:cover;object-position:top center}
 .performance-gallery-row.balanced img{height:clamp(360px,62vw,620px);object-fit:contain;background:#fff}
 .dashboard-image{aspect-ratio:16/7.2;width:100%;height:auto;object-fit:cover;object-position:top center}
+.branded-experience-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:1rem;align-items:stretch}
+.branded-landscape-column{display:grid;gap:1rem}
+.branded-landscape-column img{aspect-ratio:3/2;height:100%;object-fit:cover}
+.branded-portrait{height:100%;object-fit:cover;object-position:center}
 .stakeholder-map{display:grid;grid-template-columns:minmax(0,1.15fr) auto minmax(150px,0.8fr) auto minmax(0,1.15fr);align-items:center;gap:0.9rem;margin-top:1rem}
 .stakeholder-group{background:#fff;border:1.5px solid var(--border);border-radius:18px;padding:1.1rem;min-height:214px;box-shadow:0 12px 32px rgba(42,31,26,0.06)}
 .stakeholder-group.center{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--coral),#C96A3E);border-color:var(--coral);color:#fff;min-height:142px;box-shadow:0 16px 36px rgba(232,145,106,0.28)}
@@ -76,7 +87,7 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 .stakeholder-list li{background:var(--cream);border:1px solid var(--border);border-radius:999px;color:var(--text-mid);font-size:0.78rem;font-weight:800;line-height:1.25;padding:0.45rem 0.7rem;text-align:center}
 .stakeholder-arrow{display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:var(--cream);border:1.5px solid var(--border);border-radius:50%;color:var(--coral);font-size:1.35rem;font-weight:800;box-shadow:0 8px 20px rgba(42,31,26,0.06)}
 @media(max-width:760px){.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}.campaign-tabs{grid-template-columns:1fr}.campaign-tab{border-radius:14px}.campaign-heading{padding:0;min-height:0}.campaign-logo{position:static;width:130px;margin-bottom:1rem}.campaign-heading h2{font-size:2rem}.role-grid{grid-template-columns:1fr}.performance-gallery-row,.performance-gallery-row.three{grid-template-columns:1fr}.performance-gallery-row.balanced img{height:auto}.performance-gallery-row.digital-screens img{aspect-ratio:auto;height:auto;object-fit:contain}.stakeholder-map{grid-template-columns:1fr;gap:0.7rem}.stakeholder-arrow{margin:0 auto;transform:rotate(90deg)}.stakeholder-group{min-height:0}}
+@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}.campaign-tabs{grid-template-columns:1fr}.campaign-tab{border-radius:14px}.campaign-heading{padding:0;min-height:0}.campaign-logo{position:static;width:130px;margin-bottom:1rem}.campaign-heading h2{font-size:2rem}.role-grid{grid-template-columns:1fr}.performance-gallery-row,.performance-gallery-row.three,.branded-experience-grid,.video-preview-grid{grid-template-columns:1fr}.performance-gallery-row.balanced img{height:auto}.performance-gallery-row.digital-screens img{aspect-ratio:auto;height:auto;object-fit:contain}.branded-landscape-column img,.branded-portrait{aspect-ratio:auto;height:auto;object-fit:contain}.stakeholder-map{grid-template-columns:1fr;gap:0.7rem}.stakeholder-arrow{margin:0 auto;transform:rotate(90deg)}.stakeholder-group{min-height:0}}
 @media(max-width:420px){.metrics-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -244,9 +255,45 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
     </div>
     <div class="campaign-detail" id="branded-detail" role="tabpanel">
       <h2>Branded Residences Marketing</h2>
+      <div class="detail-section">
+        <div class="performance-note">Led the development and deployment of sales enablement materials for branded residences projects, including The Grand Hanoi, Grand Marina Saigon, and The Ritz-Carlton Residences, ensuring consistency with developer and project branding.</div>
+        <div class="performance-note">Developed Elite Sales Kits, training materials, and branded landing pages to support sales readiness and project communication.</div>
+        <div class="performance-note">Managed internal communications for TCB × OneHousing Elite, including Top Performer recognition, deal case studies, and sales success stories to strengthen team engagement.</div>
+        <div class="performance-note">Coordinated premium offline experiences including yacht showcases, private property tours, and mini workshops, overseeing concept development, vendor coordination, timelines, and execution.</div>
+        <div class="performance-note">Managed Elite Sales team branding initiatives, including profile photoshoots and team uniform development, to maintain a consistent premium brand presence.</div>
+        <div class="performance-gallery">
+          <img src="assets/branded-residences-grand-hanoi.jpg" alt="The Grand Hanoi overview">
+          <img src="assets/branded-residences-grand-marina.png" alt="Grand Marina Saigon overview">
+          <img src="assets/branded-residences-elite-sales-kit.png" alt="Elite Sales Kit for branded residences">
+          <div class="branded-experience-grid">
+            <div class="branded-landscape-column">
+              <img src="assets/branded-residences-experience-1.jpg" alt="Branded residences offline experience">
+              <img src="assets/branded-residences-experience-2.jpg" alt="Branded residences private tour">
+              <img src="assets/branded-residences-experience-3.jpg" alt="Branded residences showcase">
+            </div>
+            <img class="branded-portrait" src="assets/branded-residences-experience-4.jpg" alt="Branded residences premium experience">
+          </div>
+        </div>
+      </div>
     </div>
     <div class="campaign-detail" id="premium-detail" role="tabpanel">
       <h2>Premium Project Marketing</h2>
+      <div class="detail-section">
+        <div class="performance-note">Led the marketing execution for three key real estate projects: Masteri Era Landmark (MEL), Masteri Sky Quarter (MSQ), and Vinhomes Wonder City (VHWC).</div>
+        <div class="performance-note">Developed and deployed project communication and sales enablement materials across the full campaign lifecycle, from pre-launch rumors and market teasers through launch and post-launch phases.</div>
+        <div class="performance-note">Produced key marketing assets including sales decks, brochures, POSM, sales kits, and other project communication materials to support branding and sales activities.</div>
+        <a class="role-action" href="https://tlbh.onehousing.club/" target="_blank" rel="noopener noreferrer">View more details</a>
+        <div class="video-preview-grid">
+          <a class="video-preview first" href="https://drive.google.com/file/d/1umEGmFu6Jurl4RhhlF-Z3XH_j7PjgS1r/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open video preview on Google Drive">
+            <span class="video-play" aria-hidden="true">▶</span>
+            <span class="video-title">Video Preview</span>
+          </a>
+          <a class="video-preview second" href="https://drive.google.com/file/d/1qzFhBukoIfqxrmoD0aNazDLJkIkLpIcX/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open second video preview on Google Drive">
+            <span class="video-play" aria-hidden="true">▶</span>
+            <span class="video-title">Video Preview</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
