@@ -44,8 +44,39 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 .role-card li::before{content:'→';color:var(--coral);font-weight:800;margin-right:0.45rem}
 .role-action{display:flex;align-items:center;justify-content:center;gap:0.5rem;width:fit-content;margin:1.4rem auto 0;background:var(--text-dark);color:var(--cream);padding:0.8rem 1.6rem;border-radius:999px;text-decoration:none;font-size:0.9rem;font-weight:800;text-align:center;transition:transform 0.2s ease,box-shadow 0.2s ease,background 0.2s ease}
 .role-action:hover{background:var(--coral);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,31,26,0.16)}
+.performance-grid{display:flex;align-items:center;justify-content:center;gap:0.7rem;flex-wrap:wrap;margin-top:1rem}
+.performance-item{background:var(--cream);border:1.5px solid var(--border);border-radius:999px;color:var(--text-dark);font-family:'Manrope',sans-serif;font-size:0.88rem;font-weight:800;line-height:1;padding:0.75rem 1rem;width:fit-content;white-space:nowrap;cursor:pointer;transition:background 0.2s ease,border-color 0.2s ease,color 0.2s ease,transform 0.2s ease}
+.performance-item:hover,.performance-item.active{background:var(--coral);border-color:var(--coral);color:#fff;transform:translateY(-1px)}
+.performance-detail{display:none;margin-top:1rem;background:var(--cream);border:1.5px solid var(--border);border-radius:16px;padding:1.2rem}
+.performance-detail.active{display:block}
+.performance-detail h4{font-size:1rem;font-weight:800;color:var(--text-dark);margin-bottom:0.6rem}
+.performance-detail p{color:var(--text-mid);font-size:0.92rem;margin-bottom:0}
+.performance-note{display:flex;gap:0.5rem;align-items:flex-start;color:var(--text-mid);font-size:0.92rem;font-weight:700;line-height:1.5;margin-bottom:1rem}
+.performance-note.spaced{margin-top:1.8rem}
+.performance-note::before{content:'→';color:var(--coral);font-weight:800;flex-shrink:0}
+.performance-link{display:inline-flex;align-items:center;gap:0.45rem;width:fit-content;color:var(--coral);font-size:0.92rem;font-weight:800;text-decoration:none}
+.performance-link::before{content:'→';font-weight:800}
+.performance-link:hover{text-decoration:underline}
+.performance-gallery{display:grid;gap:1rem}
+.performance-gallery-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.performance-gallery-row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.performance-figure{display:grid;gap:0.65rem;align-content:start}
+.performance-gallery img{width:100%;height:auto;border:1.5px solid var(--border);border-radius:14px;display:block}
+.performance-gallery-row.digital-screens img{aspect-ratio:4/5;height:100%;object-fit:cover;object-position:top center}
+.performance-gallery-row.balanced img{height:clamp(360px,62vw,620px);object-fit:contain;background:#fff}
+.dashboard-image{aspect-ratio:16/7.2;width:100%;height:auto;object-fit:cover;object-position:top center}
+.stakeholder-map{display:grid;grid-template-columns:minmax(0,1.15fr) auto minmax(150px,0.8fr) auto minmax(0,1.15fr);align-items:center;gap:0.9rem;margin-top:1rem}
+.stakeholder-group{background:#fff;border:1.5px solid var(--border);border-radius:18px;padding:1.1rem;min-height:214px;box-shadow:0 12px 32px rgba(42,31,26,0.06)}
+.stakeholder-group.center{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--coral),#C96A3E);border-color:var(--coral);color:#fff;min-height:142px;box-shadow:0 16px 36px rgba(232,145,106,0.28)}
+.stakeholder-kicker{font-size:0.68rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);text-align:center;margin-bottom:0.35rem}
+.stakeholder-title{font-size:1rem;font-weight:800;color:var(--text-dark);margin-bottom:0.85rem;text-align:center;letter-spacing:0.03em}
+.stakeholder-group.center .stakeholder-title{color:#fff;margin-bottom:0;font-size:1.12rem}
+.stakeholder-logo{width:min(190px,92%);height:auto;display:block}
+.stakeholder-list{list-style:none;display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center}
+.stakeholder-list li{background:var(--cream);border:1px solid var(--border);border-radius:999px;color:var(--text-mid);font-size:0.78rem;font-weight:800;line-height:1.25;padding:0.45rem 0.7rem;text-align:center}
+.stakeholder-arrow{display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:var(--cream);border:1.5px solid var(--border);border-radius:50%;color:var(--coral);font-size:1.35rem;font-weight:800;box-shadow:0 8px 20px rgba(42,31,26,0.06)}
 @media(max-width:760px){.metrics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}.campaign-tabs{grid-template-columns:1fr}.campaign-tab{border-radius:14px}.campaign-heading{padding:0;min-height:0}.campaign-logo{position:static;width:130px;margin-bottom:1rem}.campaign-heading h2{font-size:2rem}.role-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.page{padding:2rem 1rem 4rem}.content{padding:1.4rem}h1{font-size:2rem}.campaign-tabs{grid-template-columns:1fr}.campaign-tab{border-radius:14px}.campaign-heading{padding:0;min-height:0}.campaign-logo{position:static;width:130px;margin-bottom:1rem}.campaign-heading h2{font-size:2rem}.role-grid{grid-template-columns:1fr}.performance-gallery-row,.performance-gallery-row.three{grid-template-columns:1fr}.performance-gallery-row.balanced img{height:auto}.performance-gallery-row.digital-screens img{aspect-ratio:auto;height:auto;object-fit:contain}.stakeholder-map{grid-template-columns:1fr;gap:0.7rem}.stakeholder-arrow{margin:0 auto;transform:rotate(90deg)}.stakeholder-group{min-height:0}}
 @media(max-width:420px){.metrics-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -128,6 +159,88 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
         </div>
         <a class="role-action" href="https://www.onehousing.club/" target="_blank" rel="noopener noreferrer">Check Allstar's website out there!</a>
       </div>
+      <div class="detail-section">
+        <h3>3. Work performance</h3>
+        <div class="performance-grid" role="tablist" aria-label="Work performance sections">
+          <button class="performance-item active" type="button" role="tab" aria-selected="true" aria-controls="performance-engagement" data-target="performance-engagement">Engagement</button>
+          <button class="performance-item" type="button" role="tab" aria-selected="false" aria-controls="performance-digital" data-target="performance-digital">Digital &amp; Data</button>
+          <button class="performance-item" type="button" role="tab" aria-selected="false" aria-controls="performance-operations" data-target="performance-operations">Operations</button>
+        </div>
+        <div class="performance-detail active" id="performance-engagement" role="tabpanel">
+          <h4>Engagement</h4>
+          <div class="performance-note">Developed and Managed Communications for the Program’s Zalo Community</div>
+          <div class="performance-gallery">
+            <img src="assets/allstar-engagement-1.jpg" alt="Allstar Club engagement activity">
+            <div class="performance-gallery-row">
+              <img src="assets/allstar-engagement-2.jpg" alt="Allstar Club engagement campaign">
+              <img src="assets/allstar-engagement-3.jpg" alt="Allstar Club recognition activity">
+            </div>
+            <div class="performance-gallery-row three">
+              <img src="assets/allstar-engagement-zalo-1.jpg" alt="Allstar Club Zalo community communication">
+              <img src="assets/allstar-engagement-zalo-2.jpg" alt="Allstar Club Zalo community update">
+              <img src="assets/allstar-engagement-zalo-3.jpg" alt="Allstar Club Zalo community content">
+            </div>
+            <div class="performance-note">Engagement &amp; Recognition activities</div>
+            <div class="performance-gallery-row balanced">
+              <div class="performance-figure">
+                <img src="assets/allstar-engagement-event-1.png" alt="Allstar Club engagement event recap">
+                <a class="performance-link" href="https://www.facebook.com/share/v/19wxBSPaqM/" target="_blank" rel="noopener noreferrer">Video Recap</a>
+              </div>
+              <img src="assets/allstar-engagement-event-2.png" alt="Allstar Club engagement event highlights">
+            </div>
+          </div>
+        </div>
+        <div class="performance-detail" id="performance-digital" role="tabpanel">
+          <h4>Digital &amp; Data</h4>
+          <div class="performance-note">Vibe-coding website onehousing.club</div>
+          <div class="performance-gallery">
+            <img src="assets/allstar-digital-vibe-code.jpg" alt="OneHousing Club vibe-coding website">
+            <div class="performance-gallery-row three digital-screens">
+              <img src="assets/allstar-digital-vibe-code-2.jpg" alt="OneHousing Club website detail">
+              <img src="assets/allstar-digital-vibe-code-3.jpg" alt="OneHousing Club website detail screen">
+              <img src="assets/allstar-digital-vibe-code-4.jpg" alt="OneHousing Club website detail screen">
+            </div>
+            <div class="performance-gallery-row three digital-screens">
+              <img src="assets/allstar-digital-vibe-code-5.jpg" alt="OneHousing Club website detail screen">
+              <img src="assets/allstar-digital-vibe-code-6.jpg" alt="OneHousing Club website detail screen">
+              <img src="assets/allstar-digital-vibe-code-7.jpg" alt="OneHousing Club website detail screen">
+            </div>
+          </div>
+          <div class="performance-note spaced">Dashboard setup &amp; Program tracking</div>
+          <div class="performance-gallery">
+            <img class="dashboard-image" src="assets/allstar-dashboard-tracking.png" alt="Allstar Club dashboard setup and program tracking">
+          </div>
+        </div>
+        <div class="performance-detail" id="performance-operations" role="tabpanel">
+          <h4>Operations</h4>
+          <div class="stakeholder-map" aria-label="Allstar Club stakeholder map">
+            <div class="stakeholder-group">
+              <div class="stakeholder-kicker">Internal teams</div>
+              <div class="stakeholder-title">ONEHOUSING</div>
+              <ul class="stakeholder-list">
+                <li>Marketing</li>
+                <li>Business Development &amp; Sales</li>
+                <li>Partnership</li>
+                <li>Operations</li>
+                <li>Finance &amp; Accounting</li>
+              </ul>
+            </div>
+            <div class="stakeholder-arrow" aria-hidden="true">↔</div>
+            <div class="stakeholder-group center">
+              <img class="stakeholder-logo" src="assets/allstar-stakeholder-logo.png" alt="Allstar Club">
+            </div>
+            <div class="stakeholder-arrow" aria-hidden="true">↔</div>
+            <div class="stakeholder-group">
+              <div class="stakeholder-kicker">Bank partner</div>
+              <div class="stakeholder-title">TECHCOMBANK</div>
+              <ul class="stakeholder-list">
+                <li>PRM</li>
+                <li>Partnership</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="campaign-detail" id="branded-detail" role="tabpanel">
       <h2>Branded Residences Marketing</h2>
@@ -140,6 +253,8 @@ h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;letter-spacing:-0.03em;margi
 <script>
 const campaignTabs = document.querySelectorAll('.campaign-tab');
 const campaignDetails = document.querySelectorAll('.campaign-detail');
+const performanceTabs = document.querySelectorAll('.performance-item');
+const performanceDetails = document.querySelectorAll('.performance-detail');
 
 campaignTabs.forEach(tab => {
   tab.addEventListener('click', () => {
@@ -148,6 +263,20 @@ campaignTabs.forEach(tab => {
       item.setAttribute('aria-selected', 'false');
     });
     campaignDetails.forEach(panel => panel.classList.remove('active'));
+
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById(tab.dataset.target).classList.add('active');
+  });
+});
+
+performanceTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    performanceTabs.forEach(item => {
+      item.classList.remove('active');
+      item.setAttribute('aria-selected', 'false');
+    });
+    performanceDetails.forEach(panel => panel.classList.remove('active'));
 
     tab.classList.add('active');
     tab.setAttribute('aria-selected', 'true');
