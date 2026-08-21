@@ -59,7 +59,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .logo span{color:var(--coral)}
 .nav-links{display:none;flex-direction:column;gap:1.5rem;list-style:none;align-items:flex-start;position:absolute;top:100%;right:3rem;background:var(--bg-card);padding:1.5rem;border:1px solid var(--border);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.1);min-width:200px;}
 .nav-links.mobile-active{display:flex;}
-.mobile-menu-btn{display:block;background:none;border:none;font-size:1.5rem;color:var(--text-dark);cursor:pointer;}
+.mobile-menu-btn{display:block;background:none;border:none;font-size:1.5rem;color:var(--text-dark);cursor:pointer;min-width:44px;min-height:44px;line-height:1;}
 .nav-links a{text-decoration:none;color:var(--text-mid);font-size:0.9rem;font-weight:500;transition:color 0.2s;position:relative;display:block;width:100%}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:var(--coral);transition:width 0.3s}
 .nav-links a:hover{color:var(--coral)}
@@ -132,7 +132,7 @@ h1 .line-sub{font-weight:400;font-size:0.6em;color:var(--text-mid);font-family:'
 .hero-right{position:relative;height:480px;animation:slideUp 0.8s 0.2s ease both;opacity:0;animation-fill-mode:forwards}
 .avatar-card{background:var(--bg-card);border-radius:24px;border:1.5px solid var(--border);padding:2rem;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.08);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:200px; transition: background 0.3s ease, border-color 0.3s ease;}
 .avatar{width:100px;height:100px;background:linear-gradient(135deg,var(--lavender),var(--blue-soft));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:2.5rem;border:3px solid var(--bg-card);box-shadow:0 4px 16px rgba(0,0,0,0.1);overflow:hidden; transition: border-color 0.3s ease;}
-.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 18%;transform:translateY(8px)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 18%;transform:translateY(-2px)}
 .avatar-card h3{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:0.3rem; color:var(--text-dark);}
 .avatar-card p{color:var(--text-mid);font-size:0.8rem}
 .status-dot{display:inline-block;width:8px;height:8px;background:#4CAF50;border-radius:50%;margin-right:0.4rem}
@@ -336,9 +336,25 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:2.5rem 3r
     background: var(--bg-overlay);
     align-items: center;
   }
-  .hero{padding:7rem 1.5rem 3rem}
-  .hero-content{grid-template-columns:1fr;gap:3rem}
-  .hero-right{height:300px}
+  .hero{min-height:auto;padding:6.25rem 1.25rem 2.75rem;align-items:flex-start}
+  .hero-content{grid-template-columns:1fr;gap:2.25rem}
+  .tag{max-width:100%;margin-bottom:1.15rem;line-height:1.45}
+  h1{font-size:clamp(2.3rem,11vw,3.25rem);margin-bottom:1.15rem}
+  h1 .line-sub{font-size:0.56em;line-height:1.35;margin-top:0.5rem}
+  .hero-desc{font-size:0.95rem;line-height:1.65;margin-bottom:1.75rem}
+  .hero-btns{gap:0.7rem}
+  .btn-primary,.btn-outline{justify-content:center;min-height:48px;padding:0.75rem 1.2rem}
+  .hero-right{height:290px;width:min(100%,360px);margin:0 auto}
+  .avatar-card{z-index:2;width:190px;padding:0.9rem;border-radius:20px}
+  .avatar{width:70px;height:70px;margin-bottom:0.6rem}
+  .avatar-card h3{font-size:0.88rem;margin-bottom:0.2rem}
+  .avatar-card p{font-size:0.66rem;white-space:nowrap}
+  .bubble{z-index:1;padding:0.48rem 0.6rem;border-radius:13px;font-size:0.6rem;line-height:1.25;box-shadow:0 6px 18px rgba(0,0,0,0.07)}
+  .bubble-emoji{font-size:0.75rem;margin-right:0.2rem}
+  .bubble-1{top:0;left:0}
+  .bubble-2{top:0;right:0}
+  .bubble-3{display:block;bottom:0;left:0}
+  .bubble-4{display:block;right:0;bottom:0}
   .about{grid-template-columns:1fr;padding:4rem 1.5rem;gap:3rem}
   .services{padding:4rem 1.5rem}
   .services-grid{grid-template-columns:1fr}
@@ -355,6 +371,36 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:2.5rem 3r
   .form-row{grid-template-columns:1fr}
   footer{flex-direction:column;align-items:center;text-align:center;padding:2rem}
 }
+@media(max-width:480px){
+  nav{padding:0.7rem 1rem}
+  .logo{font-size:1rem}
+  .nav-links{padding:1.25rem 1rem;gap:1.15rem}
+  .hero{padding-inline:1rem}
+  .hero-btns{display:grid;grid-template-columns:1fr;width:100%}
+  .btn-primary,.btn-outline{width:100%}
+  .hero-right{height:275px}
+  .avatar-card{width:180px;padding:0.8rem}
+  .avatar{width:64px;height:64px}
+  .avatar-card h3{font-size:0.82rem}
+  .avatar-card p{font-size:0.61rem}
+  .bubble{font-size:0.56rem;padding:0.42rem 0.52rem}
+  .bubble-emoji{font-size:0.7rem}
+  .about,.services,.portfolio,.process,.contact{padding-left:1rem;padding-right:1rem}
+  .contact-card{padding:1.5rem 1rem}
+  .portfolio-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:0.45rem;margin-right:-1rem;padding-right:1rem;scrollbar-width:none}
+  .portfolio-filters::-webkit-scrollbar{display:none}
+  .filter-btn{flex:0 0 auto;min-height:40px}
+  .project-img{height:auto;aspect-ratio:16/10}
+  .project-info{padding:1rem 1.1rem}
+  .steps{grid-template-columns:1fr;gap:1.75rem;text-align:left}
+  .step{display:grid;grid-template-columns:56px 1fr;column-gap:1rem;text-align:left;align-items:start}
+  .step-circle{grid-row:span 2;margin:0}
+  .step h4{margin-top:0.25rem}
+  .step p{grid-column:2}
+  .thank-you-card{padding:2rem 1.25rem;border-radius:22px}
+  .contact-link-row{display:grid;grid-template-columns:1fr;gap:0.75rem}
+  .contact-action{width:100%}
+}
 /* Menu btn is displayed on all devices */
 </style>
 </head>
@@ -366,7 +412,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:2.5rem 3r
 <!-- ===== NAVIGATION ===== -->
 <nav>
   <div class="logo">Bui Bich Phuong<span>.</span></div>
-  <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-controls="navLinks" aria-expanded="false">☰</button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#hero" data-i18n="navHome">Home</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
@@ -497,7 +543,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);padding:2.5rem 3r
     <div>
       <div class="section-label">Portfolio</div>
       <h2 class="section-title" data-i18n="featuredProjects">Featured Projects</h2>
-    </div>==
+    </div>
   </div>
   
   <div class="portfolio-filters reveal">
@@ -928,6 +974,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       target.scrollIntoView({ behavior: 'smooth' });
       // Close dropdown menu if open
       document.getElementById('navLinks').classList.remove('mobile-active');
+      document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'false');
+      document.getElementById('mobileMenuBtn').setAttribute('aria-label', 'Open navigation menu');
     }
   });
 });
@@ -936,7 +984,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 const mobileBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.getElementById('navLinks');
 mobileBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('mobile-active');
+  const isOpen = navLinks.classList.toggle('mobile-active');
+  mobileBtn.setAttribute('aria-expanded', String(isOpen));
+  mobileBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
 });
 
 // Language toggle
